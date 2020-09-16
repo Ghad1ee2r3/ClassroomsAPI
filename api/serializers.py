@@ -29,3 +29,8 @@ class ClassroomDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Classroom
         fields = '__all__'
+
+class CreatClassroomSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Classroom
+		exclude = ['teacher',]

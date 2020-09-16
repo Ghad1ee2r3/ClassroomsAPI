@@ -14,12 +14,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('classrooms/', views.classroom_list, name='classroom-list'),
     path('classrooms/<int:classroom_id>/',  views.classroom_detail, name='classroom-detail'),
-    path('register/', api_views.Register.as_view(), name="register"),
+    path('register/', api_views.Register.as_view(), name="api-register"),
 
-     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+     path('login/', TokenObtainPairView.as_view(), name='api-login'),
     path('api/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('list/' , api_views.ClassroomList.as_view(), name='api-classroom-list'),
     path('detail/<int:classroom_id>' , api_views.ClassroomDetails.as_view(), name='api-classroom-detail'),
+    path('update/<int:classroom_id>' , api_views.ClassroomUpdate.as_view(), name='api-classroom-update'),
+    path('delete/<int:classroom_id>' , api_views.ClassroomDelete.as_view(), name='api-classroom-delete'),
+    path('create/', api_views.ClassroomCreate.as_view(), name='api-classroom-create'),
 
 
 
